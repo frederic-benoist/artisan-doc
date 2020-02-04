@@ -1,0 +1,4 @@
+# Force PHP language for repository
+*.sql linguist-language=PHP
+*.pdf linguist-language=PHP
+*.md linguist-language=PHP
