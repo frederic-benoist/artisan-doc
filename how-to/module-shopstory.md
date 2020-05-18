@@ -23,13 +23,6 @@ The artisan module will ask a few questions:
 - Create templates for content hooks? Answer with **0** (No)
   
 At the end of the command, the shopstory module skeleton is created. 
-The last step of the module creation consists in launching the generation of the autoload with composer.
-
-  ```
-  cd ./modules/shopstory
-  composer dump-autoload
-  cd ../..  
-  ```
 
 ## 2 - Second step: creating the tables in the database.
 
@@ -55,13 +48,7 @@ php bin/console artisan:module:model:create shopstory shophistory
 
 This command automatically creates the class model (ObjectModel) allowing to manipulate the information stored in the shophistory and shophistory_lang tables. 
 
-At the end of the command, the shopstory model is created. The last step in the creation of the model is to add the creation of tables and their deletions during the installation and uninstallation of the module (SQL statements are in the code of the new model). 
-
-To do this, we are going to relaunch the module creation command to force its update.
-
-```
-php bin/console artisan:module:create shopstory
-```
+At the end of the command, the shopstory model is created and the creation of tables and their deletions are automatically processed during the installation and uninstallation of the module (SQL statements are in the code of the new model). 
 
 ## 4 - Fourth step: adding of a legacy back office CRUD controller
 
@@ -71,11 +58,7 @@ php bin/console artisan:module:admin:legacycontroller:create shopstory shophisto
 
 This command automatically creates a legacy crud controller allowing to create, read, update and delete shophistory.
 
-The last step is to add and remove the controller link in the PrestaShop back office menu during the installation and uninstallation of the module. To do this, we are going to relaunch the module creation command to force its update.
-
-```
-php bin/console artisan:module:create shopstory
-```
+The controller link in the PrestaShop back office menu is automatically add and remove during the installation and uninstallation of the module.
 
 ## 5 - Last step: Displaying shop information.
 
