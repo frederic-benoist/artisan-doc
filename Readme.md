@@ -20,24 +20,29 @@ There is a charge for this module to cover the development, support and document
 
 The [shopstory](how-to/module-shopstory.md) module displays the history of the shop on the homepage. It allows to show the creation of the module skeleton. The loading and execution of sql command. The creation of a model (objectmodel). The creation of a legacy CRUD controller in the back office.
 
-## List of artisan command (Version 1.1.x)
+## List of artisan command (Version 1.2.x)
 
 ```    
 php bin/console artisan:configuration:delete {name}
 php bin/console artisan:configuration:set {name} {value}
-php bin/console artisan:module:create {moduleName}
-php bin/console artisan:module:model:create {moduleName} {modelName}
+php bin/console artisan:debug:disable
+php bin/console artisan:debug:enable 
+php bin/console artisan:module:admin:controller:create {moduleName} {controllerName}
+php bin/console artisan:module:admin:crudcontroller:create {moduleName} {modelName}
 php bin/console artisan:module:admin:form:create {moduleName} {modelName}
 php bin/console artisan:module:admin:legacycontroller:create {moduleName} {modelName}
-php bin/console artisan:module:admin:crudcontroller:create {moduleName} {modelName}
-php bin/console artisan:module:install {moduleName}
-php bin/console artisan:module:uninstall {moduleName}
-php bin/console artisan:module:zip {moduleName}
-php bin/console artisan:module:list [--active|--not-active|--installed|--not-installed]
-php bin/console artisan:module:translation:update {moduleName} --subdomain [Admin|Shop]
+php bin/console artisan:module:create {moduleName}
+php bin/console artisan:module:front:controller:create {moduleName} {controllerName}
 php bin/console artisan:module:hook:list {moduleName}
 php bin/console artisan:module:hook:register {moduleName} {hooks}
 php bin/console artisan:module:hook:unregister {moduleName} {hooks}
+php bin/console artisan:module:install {moduleName}
+php bin/console artisan:module:list [--active|--not-active|--installed|--not-installed]
+php bin/console artisan:module:model:create {moduleName} {modelName}
+php bin/console artisan:module:translation:update {moduleName} --subdomain [Admin|Shop]
+php bin/console artisan:module:uninstall {moduleName}
+php bin/console artisan:module:views:copy {moduleName} {themeName} [overwrite={Ask|Yes|No}]
+php bin/console artisan:module:zip {moduleName}
 php bin/console artisan:override:disable
 php bin/console artisan:override:enable
 php bin/console artisan:override:class {className} {functionName}
@@ -47,8 +52,6 @@ php bin/console artisan:sql:load {filePathAndName}
 php bin/console artisan:sql:snapshot {snapshotName}
 php bin/console artisan:sql:restore {snapshotName}
 php bin/console artisan:theme:create:child {themeName}
-php bin/console artisan:debug:disable
-php bin/console artisan:debug:enable 
 ```    
 
 ## Disclaimer
